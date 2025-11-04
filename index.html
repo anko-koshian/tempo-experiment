@@ -88,10 +88,10 @@ async function startExperiment() {
     alert('すべての項目を入力してください');
     return;
   }
-  subjectInfo = { age, gender, experience, musicApp };
+  subjectInfo = { age, gender, musicApp };
 
   document.getElementById('form').style.display = 'none';
-  document.getElementById('experiment').style.display = 'block';
+  //document.getElementById('experiment').style.display = 'block';
   prepareTrial();
 }
 
@@ -202,4 +202,5 @@ function downloadCSV() {
 </script>
 </body>
 </html>
+
 
