@@ -85,6 +85,22 @@
       margin-top: 10px;
     }
   }
+ /* 💻 パソコンサイズでは中央寄せに戻す */
+@media (min-width: 601px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .card {
+    max-width: 600px;
+    margin: 30px auto;
+    text-align: center;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -278,6 +294,7 @@ function downloadCSV() {
 </script>
 </body>
 </html>
+
 
 
 
