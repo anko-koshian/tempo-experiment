@@ -4,57 +4,106 @@
 <meta charset="utf-8" />
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>テンポ知覚実験（A/B自由再生）</title>
+
 <style>
-/* --- 共通スタイル --- */
-body {
-  font-family: sans-serif;
-  margin: 0;
-  padding: 0;
-  text-align: center;
-  background-color: #f7f7f7;
-}
-
-.container {
-  display: none; /* 最初は全部非表示 */
-  margin: 0 auto;
-  padding: 20px;
-  box-sizing: border-box;
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 0 8px rgba(0,0,0,0.1);
-}
-
-/* 表示させるときだけ使う */
-.active {
-  display: block;
-}
-
-/* --- PC用レイアウト --- */
-@media (min-width: 769px) {
-  .container {
-    width: 60%;
-    margin: 50px auto;
-  }
-}
-
-/* --- スマホ用レイアウト --- */
-@media (max-width: 768px) {
-  .container {
-    width: 95%;
-    margin: 20px auto;
+  body {
+    font-family: "Yu Gothic", sans-serif;
+    background: #f8faf8;
+    text-align: center;
+    margin: 0;
+    padding: 12px;
   }
 
-  button {
-    font-size: 1.2em;
-    padding: 14px 20px;
+  .card {
+    background: white;
+    display: inline-block;
+    width: 95%;               /* スマホ画面幅に合わせる */
+    max-width: 600px;         /* パソコンでは広がりすぎないように */
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    margin-top: 16px;
+  }
+
+  h1, h2 {
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+  }
+
+  p {
+    font-size: 1.1rem;
+    line-height: 1.6;
   }
 
   input, select {
+    font-size: 1rem;
+    padding: 8px;
+    margin: 8px;
+    width: 80%;
+    max-width: 300px;
+  }
+
+  textarea {
     width: 90%;
-    font-size: 1em;
+    max-width: 500px;
+    height: 180px;
+    font-size: 0.9rem;
+  }
+
+  button {
+    font-size: 1.2rem;
+    padding: 14px 24px;
+    border-radius: 12px;
+    border: none;
+    background: #4CAF50;
+    color: white;
+    cursor: pointer;
+    margin: 12px;
+    width: 45%;
+    max-width: 200px;
+  }
+
+  button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  #sameBtn, #diffBtn {
+    margin-top: 60px;
+  }
+
+ #form, #experiment, #end {
+  display: none;
+}
+
+  /* 🌸 スマホ画面用に文字や余白を少し大きくする */
+  @media (max-width: 600px) {
+    h1, h2 { font-size: 1.3rem; }
+    p { font-size: 1rem; }
+    button {
+      width: 90%;
+      font-size: 1.1rem;
+      margin-top: 10px;
+    }
+  }
+ /* 💻 パソコンサイズでは中央寄せに戻す */
+@media (min-width: 601px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .card {
+    max-width: 600px;
+    margin: 30px auto;
+    text-align: center;
   }
 }
+
 </style>
+
 
 </head>
 <body>
@@ -80,7 +129,7 @@ body {
     <button onclick="startExperiment()">実験開始</button>
   </div>
 
-  <div class="card" id="experiment" style="margin-top:18px; display: none;">
+  <div class="card" id="experiment" style="display: none; margin-top:18px;">
     <h2>試行 <span id="trialNum">1</span> / 20</h2>
     <p id="instr">AとBを再生して、ふたつのテンポが「同じ」か「違う」かを直観的に選んでください。</p>
 
@@ -98,7 +147,7 @@ body {
     <p id="status" style="color:#666; margin-top:12px;"></p>
   </div>
 
-  <div class="card" id="end" style="margin-top:18px; display: none;">
+  <div class="card" id="end" style="display: none; margin-top:18px;">
     <h2>終了です。ご協力ありがとうございました。</h2>
     <p>データを以下からダウンロードして、菅原に送信してください。</p>
     <p>よろしくお願いします！！</p>
@@ -248,6 +297,7 @@ function downloadCSV() {
 </script>
 </body>
 </html>
+
 
 
 
