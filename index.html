@@ -40,8 +40,8 @@
     <h2>試行 <span id="trialNum">1</span> / 20</h2>
     <p id="instr">AとBを再生して、ふたつのテンポが「同じ」か「違う」かを直観的に選んでください。</p>
 
-    <audio id="playerA" src="music_base (mp3cut.net).mp3"></audio>
-    <audio id="playerB" src="music_base (mp3cut.net).mp3"></audio><br>
+    <audio id="playerA" src="https://drive.google.com/uc?export=download&id=1a9D_RZBM6D3BCcsnP9MNlq-KQBQK2_im"></audio>
+    <audio id="playerB" src="https://drive.google.com/uc?export=download&id=1a9D_RZBM6D3BCcsnP9MNlq-KQBQK2_im"></audio><br>
 
     <button id="playA" onclick="playSound('A')">Aを再生</button>
     <button id="playB" onclick="playSound('B')">Bを再生</button><br>
@@ -84,11 +84,11 @@ async function startExperiment() {
   const gender = document.getElementById('gender').value;
   //const experience = document.getElementById('experience').value;
   const musicApp = document.getElementById('musicApp').value;
-  if (!age || !gender  || !musicApp) {
+  if (!age || !gender || !experience || !musicApp) {
     alert('すべての項目を入力してください');
     return;
   }
-  subjectInfo = { age, gender, musicApp };
+  subjectInfo = { age, gender, experience, musicApp };
 
   document.getElementById('form').style.display = 'none';
   document.getElementById('experiment').style.display = 'block';
@@ -174,7 +174,7 @@ function finishExperiment() {
 //     subjectInfo.experience === "ある（部活等）" ? "club" :
 //     subjectInfo.experience === "専門的" ? "professional" : "unknown";
 
-  const header = ['age','gender','experience','musicApp','trial','isSameTrial','changedIsA','A_rate','B_rate','stepIndex','subjectSaysSame','correct'];
+  const header = ['age','gender','musicApp','trial','isSameTrial','changedIsA','A_rate','B_rate','stepIndex','subjectSaysSame','correct'];
   let txt = header.join(',') + '\n';
   history.forEach(h=>{
     txt += `${subjectInfo.age},${genderEng},${subjectInfo.musicApp},${h.trial},${h.isSameTrial},${h.changedIsA},${h.A_rate},${h.B_rate},${h.stepIndex},${h.subjectSaysSame},${h.correct}\n`;
@@ -202,6 +202,3 @@ function downloadCSV() {
 </script>
 </body>
 </html>
-
-
-
