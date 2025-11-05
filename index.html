@@ -2,53 +2,85 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>テンポ知覚実験（A/B自由再生）</title>
 <style>
-  body {font-family: sans-serif; text-align: center; margin: 0; padding: 0; background: #f9f9f9;}
-  h1 {font-size: 1.4rem; margin: 20px 0;}
-  .trial-container {
-    background-color: white;
-    width: 90vw;       /* スマホの画面幅の90%にする */
-    max-width: 480px;  /* パソコンでは広がりすぎないように */
-    margin: 20px auto;
-    padding: 24px;
+  body {
+    font-family: "Yu Gothic", sans-serif;
+    background: #f8faf8;
+    text-align: center;
+    margin: 0;
+    padding: 12px;
+  }
+
+  .card {
+    background: white;
+    display: inline-block;
+    width: 95%;               /* スマホ画面幅に合わせる */
+    max-width: 600px;         /* パソコンでは広がりすぎないように */
+    padding: 20px;
     border-radius: 16px;
-    box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    margin-top: 16px;
   }
-  p, label, input, select {
+
+  h1, h2 {
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+  }
+
+  p {
     font-size: 1.1rem;
+    line-height: 1.6;
   }
-  .card { background:white; display:inline-block; padding:20px 28px; border-radius:12px; box-shadow:0 6px 18px rgba(0,0,0,0.08); }
-  button {padding: 16px 28px; margin: 12px; border-radius: 12px; border: none; background: #4CAF50; color: #fff; font-size: 1.2rem; cursor: pointer; width: 40%; max-width: 160px;}
-  button:disabled { background: #ccc; opacity:0.5; cursor:not-allowed; }
-   #buttons {
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      margin-top: 60px;
-    }
-  input, select { padding:6px; margin:6px; }
-  textarea { width:600px; height:220px; }
-  #experiment, #end { display:none; }
-  /* スマホ用レイアウト調整 */
-   /* 🌸スマホ用に調整 */
+
+  input, select {
+    font-size: 1rem;
+    padding: 8px;
+    margin: 8px;
+    width: 80%;
+    max-width: 300px;
+  }
+
+  textarea {
+    width: 90%;
+    max-width: 500px;
+    height: 180px;
+    font-size: 0.9rem;
+  }
+
+  button {
+    font-size: 1.2rem;
+    padding: 14px 24px;
+    border-radius: 12px;
+    border: none;
+    background: #4CAF50;
+    color: white;
+    cursor: pointer;
+    margin: 12px;
+    width: 45%;
+    max-width: 200px;
+  }
+
+  button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  #sameBtn, #diffBtn {
+    margin-top: 60px;
+  }
+
+  /* 🌸 スマホ画面用に文字や余白を少し大きくする */
   @media (max-width: 600px) {
-    h1 {
-      font-size: 1.3rem;
-    }
-
-    .trial-container {
-      width: 95vw;
-      padding: 20px;
-    }
-
+    h1, h2 { font-size: 1.3rem; }
+    p { font-size: 1rem; }
     button {
-      width: 45%;
+      width: 90%;
       font-size: 1.1rem;
-      padding: 16px 20px;
+      margin-top: 10px;
     }
-    }
+  }
 </style>
 </head>
 <body>
@@ -242,6 +274,7 @@ function downloadCSV() {
 </script>
 </body>
 </html>
+
 
 
 
