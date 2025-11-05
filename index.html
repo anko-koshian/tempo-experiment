@@ -7,101 +7,81 @@
 <style>
   body {
     font-family: "Yu Gothic", sans-serif;
-    background: #f8faf8;
-    text-align: center;
-    margin: 0;
-    padding: 12px;
+    background:#f8faf8;
+    margin:0;
+    padding:20px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:flex-start;
+    min-height:100vh;
   }
 
   .card {
-    background: white;
-    display: inline-block;
-    width: 95%;               /* スマホ画面幅に合わせる */
-    max-width: 600px;         /* パソコンでは広がりすぎないように */
-    padding: 20px;
-    border-radius: 16px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-    margin-top: 16px;
+    background:white;
+    display:inline-block;
+    padding:20px 28px;
+    border-radius:12px;
+    box-shadow:0 6px 18px rgba(0,0,0,0.08);
+    max-width:600px;
+    width:90%;
+    box-sizing:border-box;
+    text-align:center;
+    margin:20px 0;
   }
 
-  h1, h2 {
-    font-size: 1.4rem;
-    margin-bottom: 12px;
-  }
-
-  p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-  }
-
-  input, select {
-    font-size: 1rem;
-    padding: 8px;
-    margin: 8px;
-    width: 80%;
-    max-width: 300px;
-  }
-
-  textarea {
-    width: 90%;
-    max-width: 500px;
-    height: 180px;
-    font-size: 0.9rem;
+  h1, h2, p {
+    margin:10px 0;
+    text-align:center;
   }
 
   button {
-    font-size: 1.2rem;
-    padding: 14px 24px;
-    border-radius: 12px;
-    border: none;
-    background: #4CAF50;
-    color: white;
-    cursor: pointer;
-    margin: 12px;
-    width: 45%;
-    max-width: 200px;
+    padding:12px 20px;
+    margin:8px;
+    border-radius:10px;
+    border:none;
+    background:#4CAF50;
+    color:#fff;
+    cursor:pointer;
+    font-size:16px;
   }
 
   button:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
+    opacity:0.5;
+    cursor:not-allowed;
   }
 
-  #sameBtn, #diffBtn {
-    margin-top: 60px;
+  input, select {
+    padding:8px;
+    margin:6px;
+    font-size:16px;
   }
 
- #form, #experiment, #end {
-  display: none;
-}
+  textarea {
+    width:100%;
+    height:220px;
+    font-size:14px;
+  }
 
-  /* 🌸 スマホ画面用に文字や余白を少し大きくする */
+  /* 📱 スマホでは幅いっぱいに */
   @media (max-width: 600px) {
-    h1, h2 { font-size: 1.3rem; }
-    p { font-size: 1rem; }
+    .card {
+      width:95%;
+      padding:16px;
+    }
+
     button {
-      width: 90%;
-      font-size: 1.1rem;
-      margin-top: 10px;
+      width:90%;
+      font-size:18px;
+    }
+
+    input, select {
+      width:90%;
+      font-size:18px;
     }
   }
- /* 💻 パソコンサイズでは中央寄せに戻す */
-@media (min-width: 601px) {
-  body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-  }
-
-  .card {
-    max-width: 600px;
-    margin: 30px auto;
-    text-align: center;
-  }
-}
-
 </style>
+
 </head>
 <body>
   <div class="card" id="welcome">
@@ -294,6 +274,7 @@ function downloadCSV() {
 </script>
 </body>
 </html>
+
 
 
 
