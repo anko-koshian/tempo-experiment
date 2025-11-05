@@ -2,15 +2,41 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>テンポ知覚実験（A/B自由再生）</title>
 <style>
-  body { font-family: "Yu Gothic", sans-serif; background:#f8faf8; text-align:center; padding:28px; }
+  body {font-family: sans-serif; text-align: center; margin: 0; padding: 0; background: #f9f9f9;}
+  h1 {font-size: 1.4rem; margin: 20px 0;}
   .card { background:white; display:inline-block; padding:20px 28px; border-radius:12px; box-shadow:0 6px 18px rgba(0,0,0,0.08); }
-  button { padding:10px 18px; margin:8px; margin-top:50px; border-radius:8px; border:none; background:#4CAF50; color:#fff; cursor:pointer; font-size:15px; gap:120px;}
-  button:disabled { opacity:0.5; cursor:not-allowed; }
+  button {padding: 16px 28px; margin: 12px; border-radius: 12px; border: none; background: #4CAF50; color: #fff; font-size: 1.2rem; cursor: pointer; width: 40%; max-width: 160px;}
+  button:disabled { background: #ccc; opacity:0.5; cursor:not-allowed; }
+   #buttons {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      margin-top: 60px;
+    }
   input, select { padding:6px; margin:6px; }
   textarea { width:600px; height:220px; }
   #experiment, #end { display:none; }
+  /* スマホ用レイアウト調整 */
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 1.1rem;
+      }
+
+      button {
+        width: 45%;
+        font-size: 1rem;
+        padding: 14px 20px;
+      }
+
+      #buttons {
+        flex-direction: row;
+        gap: 24px;
+        margin-top: 40px;
+      }
+    }
 </style>
 </head>
 <body>
@@ -46,7 +72,7 @@
     <button id="playA" onclick="playSound('A')">Aを再生</button>
     <button id="playB" onclick="playSound('B')">Bを再生</button><br>
 
-    <div style="display:flex; justify-content:space-around; margin-top:60px;">
+   <div id="buttons">
   <button id="sameBtn" onclick="respond(true)" disabled>同じ</button>
   <button id="diffBtn" onclick="respond(false)" disabled>違う</button>
 </div>
@@ -204,6 +230,7 @@ function downloadCSV() {
 </script>
 </body>
 </html>
+
 
 
 
