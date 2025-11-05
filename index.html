@@ -7,6 +7,18 @@
 <style>
   body {font-family: sans-serif; text-align: center; margin: 0; padding: 0; background: #f9f9f9;}
   h1 {font-size: 1.4rem; margin: 20px 0;}
+  .trial-container {
+    background-color: white;
+    width: 90vw;       /* スマホの画面幅の90%にする */
+    max-width: 480px;  /* パソコンでは広がりすぎないように */
+    margin: 20px auto;
+    padding: 24px;
+    border-radius: 16px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+  }
+  p, label, input, select {
+    font-size: 1.1rem;
+  }
   .card { background:white; display:inline-block; padding:20px 28px; border-radius:12px; box-shadow:0 6px 18px rgba(0,0,0,0.08); }
   button {padding: 16px 28px; margin: 12px; border-radius: 12px; border: none; background: #4CAF50; color: #fff; font-size: 1.2rem; cursor: pointer; width: 40%; max-width: 160px;}
   button:disabled { background: #ccc; opacity:0.5; cursor:not-allowed; }
@@ -20,22 +32,22 @@
   textarea { width:600px; height:220px; }
   #experiment, #end { display:none; }
   /* スマホ用レイアウト調整 */
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 1.1rem;
-      }
+   /* 🌸スマホ用に調整 */
+  @media (max-width: 600px) {
+    h1 {
+      font-size: 1.3rem;
+    }
 
-      button {
-        width: 45%;
-        font-size: 1rem;
-        padding: 14px 20px;
-      }
+    .trial-container {
+      width: 95vw;
+      padding: 20px;
+    }
 
-      #buttons {
-        flex-direction: row;
-        gap: 24px;
-        margin-top: 40px;
-      }
+    button {
+      width: 45%;
+      font-size: 1.1rem;
+      padding: 16px 20px;
+    }
     }
 </style>
 </head>
@@ -230,6 +242,7 @@ function downloadCSV() {
 </script>
 </body>
 </html>
+
 
 
 
