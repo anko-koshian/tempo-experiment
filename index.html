@@ -84,11 +84,11 @@ async function startExperiment() {
   const gender = document.getElementById('gender').value;
   //const experience = document.getElementById('experience').value;
   const musicApp = document.getElementById('musicApp').value;
-  if (!age || !gender || !experience || !musicApp) {
+  if (!age || !gender  || !musicApp) {
     alert('すべての項目を入力してください');
     return;
   }
-  subjectInfo = { age, gender, experience, musicApp };
+  subjectInfo = { age, gender, musicApp };
 
   document.getElementById('form').style.display = 'none';
   document.getElementById('experiment').style.display = 'block';
@@ -202,4 +202,5 @@ function downloadCSV() {
 </script>
 </body>
 </html>
+
 
