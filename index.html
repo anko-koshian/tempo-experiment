@@ -41,6 +41,12 @@
   }
 
   button:disabled { opacity: 0.5; cursor: not-allowed; }
+
+  #buttons {
+  display: flex;           /* 横並び */
+  justify-content: center; /* 中央寄せ */
+  margin-top: 24px;        /* 上の再生ボタンとの間隔 */
+}
   
 
   #sameBtn { background-color: #4CAF50; color: white; margin-top:50px; margin-right: 25px;}
@@ -51,7 +57,10 @@
   @media (max-width: 600px) {
     h1, h2 { font-size: 1.3rem; }
     p { font-size: 1rem; }
-    button { width: 90%; font-size: 1.1rem; margin-top: 10px; }
+     #sameBtn, #diffBtn {
+    width: 45%;       /* ボタンを少し小さめにして横に並べる */
+    font-size: 1.1rem;
+  }
   }
 
   @media (min-width: 601px) {
@@ -256,3 +265,4 @@ function downloadCSV() {
 </script>
 </body>
 </html>
+
