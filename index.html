@@ -46,8 +46,10 @@
     <button id="playA" onclick="playSound('A')">Aを再生</button>
     <button id="playB" onclick="playSound('B')">Bを再生</button><br>
 
-    <button id="sameBtn" onclick="respond(true)" disabled>同じ</button>
-    <button id="diffBtn" onclick="respond(false)" disabled>違う</button>
+    <div style="display:flex; justify-content:space-around; margin-top:60px;">
+  <button id="sameBtn" onclick="respond(true)" disabled>同じ</button>
+  <button id="diffBtn" onclick="respond(false)" disabled>違う</button>
+</div>
 
     <p id="status" style="color:#666; margin-top:12px;"></p>
   </div>
@@ -102,7 +104,7 @@ function prepareTrial() {
   const A_rate = (isSameTrial ? 1.00 : (changedIsA ? targetRate : 1.00));
   const B_rate = (isSameTrial ? 1.00 : (changedIsA ? 1.00 : targetRate));
 
-  window._currentTrial = { trial, isSameTrial, changedIsA, A_rate, B_rate, stepIndex };
+  window._currentTrial = { trial: trial, isSameTrial, changedIsA, A_rate, B_rate, stepIndex };
   updateStatus(`A/Bを再生してください。`);
 }
 
@@ -202,5 +204,6 @@ function downloadCSV() {
 </script>
 </body>
 </html>
+
 
 
